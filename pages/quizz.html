@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quizz DartyMax</title>
+  <link 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Quizz DartyMax</h1>
+    <div class="content-wrapper">
+      <div class="info-block">
+        <div class="card">
+          <p>Testez vos connaissances sur DartyMax !</p>
+          <div id="quiz-container">
+            <p class="question" id="question"></p>
+            <div class="options" id="options"></div>
+            <p class="result" id="result"></p>
+            <p class="score" id="score" style="display:none;"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="modules.html" class="button">Retour à la formation</a>
+  </div>
+  <script>
+    const quizData = [
+      { question: "Que propose l'offre DartyMax ?", options: ["Des réparations illimitées", "Livraison à vélo", "Réduction sur tous les produits"], answer: "Des réparations illimitées" },
+      { question: "Quelle est la durée minimale d'engagement ?", options: ["6 mois", "12 mois", "24 mois"], answer: "12 mois" },
+      { question: "L'appel CheckUp est-il obligatoire ?", options: ["Oui pour pouvoir profiter des avantages", "Non"], answer: "Oui pour pouvoir profiter des avantages" },
+      { question: "Quels appareils sont couverts par DartyMax ?", options: ["Tous les appareils", "Uniquement ceux achetés chez Darty", "Ceux en état de fonctionnement au moment de la souscription"], answer: "Ceux en état de fonctionnement au moment de la souscription" },
+      { question: "Que se passe-t-il si un appareil n'est pas réparable ?", options: ["Le client pourra recevoir une carte cadeau en fonction des barèmes", "Le client doit payer une partie des réparations", "Il n'est pas pris en charge"], answer: "Le client pourra recevoir une carte cadeau en fonction des barèmes" },
+      { question: "Quels produits sont exclus ?", options: ["Tous les produits sont éligibles", "Les produits sous maintenance avec factures", "Les produits en panne avant la souscription"], answer: "Les produits en panne avant la souscription" },
+      { question: "Comment contacter le service client DartyMax ?", options: ["Uniquement en magasin", "Par téléphone et espace client", "Par courrier uniquement"], answer: "Par téléphone et espace client" },
+      { question: "DartyMax couvre-t-il les appareils achetés ailleurs que chez Darty ?", options: ["Oui sous conditions", "Non"], answer: "Oui sous conditions" },
+      { question: "Peut-on résilier avant 12 mois ?", options: ["Oui", "Non"], answer: "Non" },
+      { question: "DartyMax propose-t-il une maintenance préventive ?", options: ["Oui c’est l’objet principal du contrat", "Non"], answer: "Oui c’est l’objet principal du contrat" }
+    ];
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+    const questionEl = document.getElementById("question");
+    const optionsEl = document.getElementById("options");
+    const resultEl = document.getElementById("result");
+    const scoreEl = document.getElementById("score");
+
+    function loadQuestion() {
+      const currentQuestion = quizData[currentQuestionIndex];
+      questionEl.textContent = currentQuestion.question;
+      optionsEl.innerHTML = "";
+      currentQuestion.options.forEach(option => {
+        const button = document.createElement("button");
+        button.textContent = option;
+        button.classList.add("option");
+        button.style.margin = "5px 0";
+        button.style.padding = "10px";
+        button.style.background = "#ff9800";
+        button.style.color = "#fff";
+        button.style.border = "none";
+        button.style.cursor = "pointer";
+        button.style.borderRadius = "5px";
+        button.addEventListener("click", () => checkAnswer(option));
+        optionsEl.appendChild(button);
+      });
+    }
+
+    function checkAnswer(selected) {
+      const currentQuestion = quizData[currentQuestionIndex];
+      if (selected === currentQuestion.answer) {
+        score++;
+      }
+      currentQuestionIndex++;
+      if (currentQuestionIndex < quizData.length) {
+        loadQuestion();
+      } else {
+        showFinalScore();
+      }
+    }
+
+    function showFinalScore() {
+      questionEl.textContent = "Quizz terminé !";
+      optionsEl.innerHTML = "";
+      scoreEl.textContent = `Votre score : ${score}/10`;
+      if (score >= 8) {
+        scoreEl.innerHTML += "<br>🎉 Bravo ! Vous maîtrisez bien DartyMax !";
+      } else {
+        scoreEl.innerHTML += "<br>🔄 Il faut refaire un tour des modules !";
+      }
+      scoreEl.style.display = "block";
+    }
+
+    loadQuestion();
+  </script>
+</body>
+</html>

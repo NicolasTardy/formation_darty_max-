@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modules de Formation Darty Max</title>
+  <link 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <style>
+    .modules-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .module-block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 80px;
+      margin: 8px 0;
+      background: #ff9800;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 18px;
+      text-align: center;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+    .module-block:hover {
+      background: #e68900;
+      transform: scale(1.03);
+    }
+    .message {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      color: #32CD32;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📚 Choisissez un module</h1>
+    <p class="message" id="encouragement"></p>
+    <div class="modules-list">
+      <a href="partie1.html" class="module-block">🔧 Qu’est-ce que DartyMax ?</a>
+      <a href="partie2.html" class="module-block">💼 Quelles sont les offres DartyMax ?</a>
+      <a href="partie3.html" class="module-block">🏆 Quels sont les avantages principaux ?</a>
+      <a href="partie4.html" class="module-block">📜 Conditions d’éligibilité</a>
+      <a href="partie5.html" class="module-block">🛠️ L’appel CheckUp est très important</a>
+      <a href="partie6.html" class="module-block">🚫 Les exclusions</a>
+      <a href="partie7.html" class="module-block">ℹ️ Quelques informations</a>
+      <a href="quizz.html" class="module-block">🎯 Testez vos connaissances (Quizz)</a>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const identifiant = localStorage.getItem('identifiant');
+      const encouragement = document.getElementById('encouragement');
+      if (identifiant) {
+        encouragement.textContent = `C'est bien ${identifiant}, il faut continuer !`;
+      }
+    });
+  </script>
+</body>
+</html>

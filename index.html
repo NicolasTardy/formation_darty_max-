@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formation Darty Max</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
-        h1 { color: #d32f2f; }
-        .container { max-width: 800px; margin: 0 auto; }
-        .button { display: block; width: 100%; margin: 10px auto; padding: 20px; background: #ff9800; color: white; text-decoration: none; border-radius: 5px; cursor: pointer; font-size: 20px; text-align: center; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formation Darty Max</title>
+  <!-- Icônes Font Awesome (optionnel) -->
+  <link 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    rel="stylesheet"
+  />
+  <!-- Lien vers votre feuille de style -->
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-    <div class="container">
-        <h1>Bienvenue dans la formation Darty Max</h1>
-        <p>Choisissez un module :</p>
-        <a href="partie1.html" class="button">Qu’est-ce que DartyMax ?</a>
-        <a href="partie2.html" class="button">Quelles sont les offres DartyMax ?</a>
-        <a href="partie3.html" class="button">Quels sont les avantages principaux ?</a>
-        <a href="partie4.html" class="button">Les principales conditions d’éligibilité</a>
-        <a href="partie5.html" class="button">L’appel CheckUp est très important</a>
-        <a href="partie6.html" class="button">Les exclusions</a>
-        <a href="partie7.html" class="button">Quelques informations</a>
-        <a href="quizz.html" class="button">Testez vos connaissances (Quizz)</a>
+  <div class="container">
+    <h1>🎓 Bienvenue dans la formation Darty Max</h1>
+    <div class="card" id="identifiant-section">
+      <p>🆔 Veuillez entrer votre identifiant :</p>
+      <input type="text" id="identifiant" placeholder="Entrez votre identifiant" />
+      <button class="button" id="validerBtn">✅ Valider</button>
+      <p id="message"></p>
     </div>
+  </div>
+  
+  <!-- Script principal -->
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
