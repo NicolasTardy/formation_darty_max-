@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formation DartyMax</title>
+  <!-- Icônes FontAwesome (nécessite une connexion internet) -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    /* RESET DE BASE */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Corps de page avec un fond dynamique */
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      color: #fff; /* Couleur générale du texte en dehors des ronds */
+    }
+
+    /* Conteneur principal avec effet glass et bordures colorées */
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 10px;
+      padding: 30px;
+      margin: 20px auto;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 0.8s ease;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* En-tête */
+    header h1 {
+      text-align: center;
+      font-size: 2.2em;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+    }
+
+    /* Liste en grille */
+    nav ul {
+      list-style: none;
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      justify-items: center;
+    }
+
+    nav ul li a {
+      /* Boutons ronds plus grands */
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      /* Couleur et style */
+      background: linear-gradient(
+        to bottom right,
+        rgba(255,255,255,0.3),
+        rgba(255,255,255,0.2)
+      );
+      border: 2px solid transparent;
+      text-decoration: none;
+      text-align: center;
+      
+      /* Texte en noir et gras */
+      color: #000;
+      font-weight: bold;
+      font-size: 0.95rem;
+      transition: 0.3s ease;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+
+    nav ul li a:hover {
+      /* Style au survol : légère augmentation de taille + ombre */
+      transform: scale(1.06);
+      background: linear-gradient(
+        to bottom right,
+        rgba(255,255,255,0.4),
+        rgba(255,255,255,0.25)
+      );
+      border-color: #fff;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    }
+
+    /* Icône au-dessus du texte */
+    nav ul li a i {
+      font-size: 1.8rem; /* Icône légèrement plus grande */
+      margin-bottom: 6px;
+    }
+
+    /* Couleurs des icônes */
+    .icon-red    { color: #e74c3c; }
+    .icon-orange { color: #e67e22; }
+    .icon-green  { color: #27ae60; }
+    .icon-blue   { color: #3498db; }
+    .icon-purple { color: #9b59b6; }
+    .icon-magenta{ color: #e84393; }
+    .icon-cyan   { color: #1abc9c; }
+    .icon-gold   { color: #f1c40f; }
+
+    /* Footer */
+    .footer-space {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      margin-top: 20px;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Bienvenue dans la formation DartyMax</h1>
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <a href="1.html">
+            <i class="fas fa-info-circle icon-red"></i>
+            Qu’est-ce que<br>DartyMax ?
+          </a>
+        </li>
+        <li>
+          <a href="2.html">
+            <i class="fas fa-list-alt icon-orange"></i>
+            Quelles formules<br>pour nos clients ?
+          </a>
+        </li>
+        <li>
+          <a href="3.html">
+            <i class="fas fa-check-circle icon-green"></i>
+            Quels<br>avantages ?
+          </a>
+        </li>
+        <li>
+          <a href="4.html">
+            <i class="fas fa-clipboard-check icon-blue"></i>
+            Conditions<br>pour en profiter
+          </a>
+        </li>
+        <li>
+          <a href="5.html">
+            <i class="fas fa-phone-alt icon-purple"></i>
+            L’appel checkUp<br>& déroulé
+          </a>
+        </li>
+        <li>
+          <a href="6.html">
+            <i class="fas fa-exclamation-circle icon-magenta"></i>
+            Quelles<br>exclusions ?
+          </a>
+        </li>
+        <li>
+          <a href="7.html">
+            <i class="fas fa-info icon-cyan"></i>
+            Points<br>importants
+          </a>
+        </li>
+        <li>
+          <a href="8.html">
+            <i class="fas fa-sync-alt icon-gold"></i>
+            Synthèse<br>générale
+          </a>
+        </li>
+        <!-- Bouton CGS -->
+        <li>
+          <a href="cgs.html">
+            <i class="fas fa-file-pdf icon-blue"></i>
+            Afficher<br>les CGS
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <footer class="footer-space">
+    &copy; 2025 Formation DartyMax. Tous droits réservés.
+  </footer>
+</body>
+</html>

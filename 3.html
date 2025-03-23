@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3. Quels avantages ?</title>
+  <!-- Icônes FontAwesome (nécessite connexion Internet) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Fond et typographie générale */
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
+      min-height: 100vh;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    /* Conteneur principal avec effet glassmorphism */
+    .container {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 1100px;
+      width: 100%;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    }
+
+    /* Bouton de retour */
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      background: #ffd700;
+      color: #333;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      margin-bottom: 30px;
+    }
+    .back-button:hover {
+      background: #ffbf00;
+    }
+
+    /* Grille de contenu : vidéo + texte */
+    .content-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    /* Sur écran < 800px, on empile en colonne */
+    @media (max-width: 800px) {
+      .content-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Section vidéo */
+    .video-section {
+      position: relative;
+    }
+    .video-section video {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    .video-section video:hover {
+      transform: scale(1.03);
+    }
+
+    /* Section texte avec fond semi-transparent et petit effet de survol */
+    .content-section {
+      background: rgba(0,0,0,0.3);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    .content-section:hover {
+      transform: translateY(-5px);
+    }
+    .content-section ul {
+      list-style: none;
+      margin-top: 15px;
+    }
+    .content-section li {
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      display: flex;
+      align-items: flex-start;
+    }
+    .content-section li span {
+      margin-right: 12px;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>3. Quels avantages ?</h1>
+    </header>
+
+    <!-- Bouton de retour -->
+    <a href="index.html" class="back-button">
+      <i class="fas fa-arrow-left"></i>&nbsp;Retour à l'accueil
+    </a>
+
+    <!-- Grille : vidéo à gauche, texte à droite -->
+    <div class="content-wrapper">
+      <!-- Section vidéo -->
+      <div class="video-section">
+        <video controls>
+          <source src="media/3.mp4" type="video/mp4">
+          Votre navigateur ne supporte pas la lecture vidéo.
+        </video>
+      </div>
+
+      <!-- Section texte -->
+      <div class="content-section">
+        <ul>
+          <li>
+            <span>✨</span>
+            <div>
+              <strong>Le « MIRACLE » DartyMax</strong>
+            </div>
+          </li>
+          <li>
+            <span>🔧</span>
+            Maintenance des appareils
+          </li>
+          <li>
+            <span>♻️</span>
+            Intervention et réparations illimitées
+          </li>
+          <li>
+            <span>⚡</span>
+            Réparations prioritaires
+          </li>
+          <li>
+            <span>🚀</span>
+            Assistance prioritaire
+          </li>
+          <li>
+            <span>🎁</span>
+            Carte cadeau si non réparable
+          </li>
+          <li>
+            <span>🚚</span>
+            Livraisons offertes
+          </li>
+          <li>
+            <span>🔥</span>
+            Exclusives Offres
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

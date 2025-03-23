@@ -1,0 +1,113 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style du corps de page */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #1f4037, #99f2c8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Conteneur principal avec effet glassmorphism */
+.container {
+  width: 90%;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Animation d'apparition */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Style du titre */
+h1 {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Navigation en grille */
+nav ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Liens de navigation */
+nav ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+nav ul li a i {
+  margin-right: 8px;
+  font-size: 1.4rem;
+}
+
+nav ul li a:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Style du footer */
+.footer-space {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #fff;
+  margin-top: 30px;
+  opacity: 0.8;
+  padding: 10px;
+}
+
+/* Ajustements pour les petits écrans */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+  nav ul {
+    grid-template-columns: 1fr;
+  }
+  nav ul li a {
+    font-size: 1rem;
+    padding: 15px;
+  }
+}

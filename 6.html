@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>6. Quelles sont les exclusions ?</title>
+  <!-- Icônes FontAwesome (nécessite une connexion Internet) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Fond et typographie générale */
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff7e5f, #feb47b);
+      min-height: 100vh;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    /* Conteneur principal avec effet glassmorphism */
+    .container {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 1100px;
+      width: 100%;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    }
+
+    /* Bouton de retour */
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      background: #ffd700;
+      color: #333;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      margin-bottom: 30px;
+    }
+    .back-button:hover {
+      background: #ffbf00;
+    }
+
+    /* Grille de contenu : vidéo + texte */
+    .content-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    /* Sur écran < 800px, on empile en colonne */
+    @media (max-width: 800px) {
+      .content-wrapper {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Section vidéo */
+    .video-section {
+      position: relative;
+    }
+    .video-section video {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    .video-section video:hover {
+      transform: scale(1.03);
+    }
+
+    /* Section texte avec fond semi-transparent et petit effet de survol */
+    .content-section {
+      background: rgba(0,0,0,0.3);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    .content-section:hover {
+      transform: translateY(-5px);
+    }
+    .content-section ul {
+      list-style: none;
+      margin-top: 15px;
+    }
+    .content-section li {
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      display: flex;
+      align-items: flex-start;
+    }
+    .content-section li span {
+      margin-right: 12px;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>6. Quelles sont les exclusions ?</h1>
+    </header>
+
+    <!-- Bouton de retour -->
+    <a href="index.html" class="back-button">
+      <i class="fas fa-arrow-left"></i>&nbsp;Retour à l'accueil
+    </a>
+
+    <!-- Grille : vidéo à gauche, texte à droite -->
+    <div class="content-wrapper">
+      <!-- Section vidéo -->
+      <div class="video-section">
+        <video controls>
+          <source src="media/6.mp4" type="video/mp4">
+          Votre navigateur ne supporte pas la lecture vidéo.
+        </video>
+      </div>
+
+      <!-- Section texte -->
+      <div class="content-section">
+        <ul>
+          <li>
+            <span>🚫</span>
+            Darty Max, c’est un service complet… mais certaines exclusions s’appliquent.
+          </li>
+          <li>
+            <span>❌</span>
+            Les produits utilisés à des fins professionnelles, commerciales ou collectives ne sont pas couverts.
+          </li>
+          <li>
+            <span>❌</span>
+            Même chose pour les appareils installés dans des locaux professionnels ou collectifs, même s’ils sont utilisés à titre personnel.
+          </li>
+          <li>
+            <span>🛠️</span>
+            Si un produit était déjà en panne avant la souscription, ou s’il a été déclaré irréparable ou a fait l’objet d’un devis refusé, il ne pourra pas bénéficier du service.
+          </li>
+          <li>
+            <span>⚡</span>
+            Les pannes dues à un accident, à un choc, à la foudre ou à toute autre cause externe ne sont pas prises en charge.
+          </li>
+          <li>
+            <span>⚙️</span>
+            Idem pour les pannes causées par une installation ou une utilisation non conforme aux recommandations du fabricant.
+          </li>
+          <li>
+            <span>🔌</span>
+            Certains éléments ne sont jamais couverts, comme les accessoires, les batteries amovibles, les ampoules ou encore les périphériques.
+          </li>
+          <li>
+            <span>💸</span>
+            Les produits dont le prix est inférieur à 50 € ne sont pas éligibles à Darty Max.
+          </li>
+          <li>
+            <span>🪛</span>
+            Les accessoires ne sont pas couverts (batteries, ampoules, etc.).
+          </li>
+          <li>
+            <span>📋</span>
+            En résumé : pour être couvert, votre produit doit être utilisé chez vous, dans les règles de l’art, et avoir une valeur d’au moins 50 €.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
